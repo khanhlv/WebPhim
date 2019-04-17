@@ -37,9 +37,16 @@ img {
 .mb-10 {
   margin-bottom: 10px;
 }
+.mt-10 {
+  margin-top: 10px;
+}
 
 .mb-15 {
   margin-bottom: 15px;
+}
+
+.mt-20 {
+  margin-top: 20px;
 }
 
 .box a {
@@ -51,7 +58,7 @@ img {
 
 .box .text-title {
   margin-top: 5px;
-  color: #5f9ea0;
+  color: #f9005a;
   font-weight: 500;
 }
 
@@ -77,4 +84,32 @@ img {
   color: #8a2be2;
   font-size: 16px;
   font-weight: 400;
+}
+.text-desc {
+  font-size: 16px;
+  text-align: left;
+  padding: 20px 0;
+}
+.btn-watching {
+  width: 180px;
+  height: 50px;
+  margin: 20px;
+  background-color: #3498db;
+  border-color: #3498db;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.btn-download {
+  width: 180px;
+  height: 50px;
+  margin: 20px;
+  background-color: #fc9e49;
+  border-color: #fc9e49;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.text-uppercase {
+  text-transform: uppercase;
 }
