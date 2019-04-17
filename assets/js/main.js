@@ -49,7 +49,7 @@ $(document).ready(function(){
             }
 
             html +=    '        <div class="box">';
-            html +=    '           <a href="' + data[i][4] + '" alt="' + data[i][1] + '" title="' + data[i][1] + '">';
+            html +=    '           <a target="_bank" href="' + data[i][4] + '" alt="' + data[i][1] + '" title="' + data[i][1] + '">';
             
             if (key == 'home') {
                 html +=    '                <div class="box-img-left" style="background-image: url(' + data[i][2] + ');"></div>';
