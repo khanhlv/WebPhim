@@ -56,6 +56,7 @@ class TopFilmLayout extends HTMLElement {
             var dataFilter = data.filter(function(d) {
                 return d[7] === '1';
             });
+            dataFilter.sort((a,b) => (a[8] > b[8]) ? 1 : ((b[8] > a[8]) ? -1 : 0));
             makeData(dataFilter, "top", $(shadowRootEl).find('.list-items-top'));
         });
 

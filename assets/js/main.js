@@ -5,7 +5,7 @@ function fetchDataSheet(sheetId, sheetIndex, callback) {
     $.getJSON(sheetUrl, function(data){
         var entry = data.feed.entry;
         var data = [];
-        var columns = 8;
+        var columns = 9;
         for (var i = columns, lengEntry = entry.length; i < lengEntry; i += columns) {
             var rows = []; 
             for (var j = 0; j < columns; j++) {
@@ -66,7 +66,6 @@ function getValueQuery(key) {
 
 function detailContent() {
     var meta = getValueQuery('meta');
-    console.log(meta);
 
     fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "1", function(data) {
         var item = data.filter(function(d) {
