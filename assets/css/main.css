@@ -82,9 +82,9 @@ img {
   height: 300px;
 }
 .box-img-right {
-  background-position: center;
+  background-position: top;
   background-size: cover;
-  height: 130px;
+  height: 150px;
 }
 .group-title {
   color: #008b8b
