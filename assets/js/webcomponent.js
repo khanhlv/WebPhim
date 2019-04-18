@@ -52,8 +52,11 @@ class TopFilmLayout extends HTMLElement {
             </div>
         </div>
       `;
-        fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "2", function(data) {
-            makeData(data, "top", $(shadowRootEl).find('.list-items-top'));
+        fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "1", function(data) {
+            var dataFilter = data.filter(function(d) {
+                return d[7] === '1';
+            });
+            makeData(dataFilter, "top", $(shadowRootEl).find('.list-items-top'));
         });
 
     }

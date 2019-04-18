@@ -5,7 +5,7 @@ function fetchDataSheet(sheetId, sheetIndex, callback) {
     $.getJSON(sheetUrl, function(data){
         var entry = data.feed.entry;
         var data = [];
-        var columns = 7;
+        var columns = 8;
         for (var i = columns, lengEntry = entry.length; i < lengEntry; i += columns) {
             var rows = []; 
             for (var j = 0; j < columns; j++) {
@@ -87,15 +87,13 @@ function detailContent() {
                                 <a target="_bank" href="${item[4] == 'N/A' ? '' : item[4]}" class="download"><button type="button" class="btn btn-download">Tải về</button></a>
                             </div>	
                         </div>
-                        
                         <div class="text-center mt-20">
                             ${item[3] == 'N/A' ? '' : item[3]}
                         </div>
-
                     </div>
                 </div>
             `;
-            
+
             $('.content-detail').append(template);
             $('title').html(item[1] == 'N/A' ? '' : item[1] + ' | PhimNetClub')
         } else {
