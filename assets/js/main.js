@@ -45,7 +45,7 @@ function makeData(data, key, items) {
             html +=    '                <div class="text-title mb-10">' + data[i][1] + '</div>';
         }
 
-        if (data[i][5] != 'N/A')
+        if (data[i][5] != 'N/A' && key == 'home')
         {
             html +=    '                <div class="text-summary">' + data[i][5] + '</div>';
         }
