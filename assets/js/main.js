@@ -86,7 +86,6 @@ function detailContent() {
                                 <a target="_bank" href="${item[4] == 'N/A' ? '' : item[4]}" class="watching"><button type="button" class="btn btn-watching">Xem online</button></a>
                                 <a target="_bank" href="${item[4] == 'N/A' ? '' : item[4]}" class="download"><button type="button" class="btn btn-download">Tải về</button></a>
                             </div>	
-                            
                         </div>
                         
                         <div class="text-center mt-20">
@@ -104,6 +103,7 @@ function detailContent() {
         }
     });
 }
+
 $(document).ready(function() {
     if ($('.home-page').length > 0) {
         fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "1", function(data) {
