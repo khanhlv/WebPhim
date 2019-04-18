@@ -1,0 +1,21 @@
+{
+  "name": "WebPhim",
+  "version": "1.0.0",
+  "description": "Web phim sử dụng Google Sheet làm DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/khanhlv/WebPhim.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/khanhlv/WebPhim/issues"
+  },
+  "homepage": "https://github.com/khanhlv/WebPhim#readme"
+}

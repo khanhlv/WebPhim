@@ -25,10 +25,10 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
 	<link rel="manifest" href="assets/img/manifest.json">
 	<link rel="mask-icon" href="assets/img/safari-pinned-tab.svg" color="#5bbad5">
-	<link rel="canonical" href="https://phimnet.club"/>
+	<link rel="canonical" href="//phimnet.club"/>
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" rel="preload" href="assets/css/main.css?v=1.0.0">
+	<link rel="stylesheet" rel="preload" href="assets/css/main.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-138502789-1"></script>
@@ -39,18 +39,31 @@
 
 		gtag('config', 'UA-138502789-1');
 	</script>
-	<script defer async src="assets/js/main.js?v=1.0.0"></script>
-	<script defer async src="assets/js/webcomponent.js?v=1.0.0"></script>
+	<script defer async src="assets/js/main.js"></script>
 </head>
 
 <body>
 	<main role="main">
-		<header-layout></header-layout>
-		<div class="container home-page">
+		<section class="jumbotron text-center">
+			<div class="container">
+				<h1 class="jumbotron-heading">PhimNetClub</h1>
+				<p class="lead text-muted">LUÔN MANG NHỮNG TUYỆT PHẨM PHIM ẢNH ĐẾN VỚI BẠN SỚM NHẤT – CHẤT LƯỢNG NHẤT.</p>
+			</div>
+		</section>
+		<div class="container">
 			<div class="row">
 				<div class="col-md-9">
 					<h3 class="mb-15 group-title">Phim hay mỗi ngày</h3>
 					<div class="row list-items">
+						<div class="col-md-3">
+							<div class="box">
+								<a target="_bank" href="#" alt="" title="">
+									<div class="box-img-left" style="background-image: url(http://topphim.club/wp-content/uploads/2019/04/ao-anh-171x300.jpg);"></div>
+									<div class="text-title">Ảo ảnh</div>
+									<div class="text-summary">Bản Đẹp + Vietsub</div>
+								</a>
+							</div>
+						</div>
 						<div class="col-md-12">
 							<p class="loading">Đang lấy dữ liệu ....</p>
 						</div>
@@ -58,10 +71,33 @@
 				</div>
 				<div class="col-md-3">
 					<top-film-layout></top-film-layout>
+					<h3 class="mb-15 group-title">Bảng xếp hạng</h3>
+					<div class="row list-items-top">
+						 <div class="col-md-12">
+							<div class="box">
+								<a target="_bank" href="#" alt="" title="">
+									<div class="box-img-right"
+										style="background-image: url(http://topphim.club/wp-content/uploads/2019/03/cau-be-va-su-menh-thien-tu-2-300x129.jpg);">
+									</div>
+									<div class="text-title mb-10">Ảo ảnh</div>
+								</a>
+							</div>
+						</div>
+						<div class="col-md-12">
+							<p class="loading">Đang lấy dữ liệu ....</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</main>
-	<footer-layout></footer-layout>	
+
+	<footer class="text-muted">
+		<div class="container">
+			<p class="float-right"><a href="#">Lên đầu trang</a></p>
+			<p>&copy;PhimNetClub 2019, Cảm ơn bạn đã đồng hành. Chúc bạn luôn vui vẻ trong cuộc sống và nhiều giây phút thư giãn!</p>
+			<p>Liên hệ: <a href="mailto:phimnet.club@gmail.com">phimnet.club@gmail.com</a> | <a target="_bank" href="complaints.html">Khiếu nại bản quyền</a> | <a target="_bank" href="donate.html">Quyền góp (Donate)</a>.</p>
+		</div>
+	</footer>
 </body>
 </html>
