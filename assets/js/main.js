@@ -31,7 +31,7 @@ function makeData(data, key, items) {
         }
 
         html +=    '        <div class="box">';
-        html +=    '           <a target="_bank" href="detail.html?meta=' + data[i][0] + '" alt="' + data[i][1] + '" title="' + data[i][1] + '">';
+        html +=    '           <a target="_blank" href="detail.html?meta=' + data[i][0] + '" alt="' + data[i][1] + '" title="' + data[i][1] + '">';
         
         if (key == 'home') {
             html +=    '                <div class="box-img-left" style="background-image: url(' + data[i][2] + ');"></div>';
@@ -83,8 +83,8 @@ function detailContent() {
                         <div class="text-center">
                             <img src="${item[6] == 'N/A' ? item[2] : item[6]}">
                             <div class="watching">
-                                <a target="_bank" href="${item[4] == 'N/A' ? '' : item[4]}" class="watching"><button type="button" class="btn btn-watching">Xem online</button></a>
-                                <a target="_bank" href="${item[4] == 'N/A' ? '' : item[4]}" class="download"><button type="button" class="btn btn-download">Tải về</button></a>
+                                <a target="_blank" title="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" alt="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" href="${item[4] == 'N/A' ? '' : item[4]}" class="watching"><button type="button" class="btn btn-watching">Xem online</button></a>
+                                <a target="_blank" title="Tải phim ${item[1] == 'N/A' ? '' : item[1]}" alt="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" href="${item[4] == 'N/A' ? '' : item[4]}" class="download"><button type="button" class="btn btn-download">Tải về</button></a>
                             </div>	
                         </div>
                         <div class="text-center mt-20">
