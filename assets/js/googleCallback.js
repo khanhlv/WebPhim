@@ -11,11 +11,28 @@ window.googleCallback = function(data) {
         dataSheet.push(rows);
     }
 }
-var version = '1.0.10';
+function network() {
+	var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {};
+	var network = performance.getEntries() || {};
+	return network;
+}
+var net = network().filter(function(d) {
+    return d.name.indexOf('googleCallback') > 0;
+});
+var version = net[0].name;
+version = version.substring(version.indexOf('?v=') + 3,version.length);
+
+var head = document.getElementsByTagName('head')[0];
+
+var css = document.createElement('link');
+css.href = 'assets/css/main.css?v=' + version;
+css.rel = 'preload';
+css.rel = 'stylesheet';
+head.appendChild(css);
+
 var sheetId = '1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0';
 var sheetIndex = '1'
 var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/' + sheetId + '/' + sheetIndex + '/public/full?alt=json&callback=googleCallback';
-var head = document.getElementsByTagName('head')[0];
 var scriptSheet = document.createElement('script');
 scriptSheet.src = sheetUrl;
 head.appendChild(scriptSheet);
