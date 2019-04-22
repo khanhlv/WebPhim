@@ -66,13 +66,9 @@ function getUrlParameter(name) {
 }
 
 function getValueQuery(key) {
-    const urlParams = new URLSearchParams(window.location.search);
-
-    if (!urlParams) {
-        return getUrlParameter(key)
-    }
-    
-    return urlParams.get(key);
+    // const urlParams = new URLSearchParams(window.location.search);
+    // return urlParams.get(key);
+    return getUrlParameter(key);
 }
 
 
