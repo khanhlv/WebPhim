@@ -8,7 +8,9 @@ class HeaderLayout extends HTMLElement {
         </style>
         <section class="jumbotron text-center">
             <div class="container">
-                <h1 class="jumbotron-heading"><a href="/"><span style="color:cadetblue">[PhimNetClub]</span></a></h1>
+                <h1 class="jumbotron-heading">
+                    <a href="/"><span style="color:cadetblue">[PhimNetClub]</span></a>
+                </h1>
                 <p class="lead text-muted">LUÔN MANG NHỮNG TUYỆT PHẨM PHIM ẢNH ĐẾN VỚI BẠN SỚM NHẤT – CHẤT LƯỢNG NHẤT.</p>
             </div>
         </section>  
