@@ -11,7 +11,7 @@ window.googleCallback = function(data) {
         dataSheet.push(rows);
     }
 }
-var version = '1.0.7';
+var version = '1.0.9';
 var sheetId = '1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0';
 var sheetIndex = '1'
 var sheetUrl = 'https://spreadsheets.google.com/feeds/cells/' + sheetId + '/' + sheetIndex + '/public/full?alt=json&callback=googleCallback';
