@@ -58,13 +58,16 @@ window.customElements.define('top-film-layout',
                 </div>
             `;
 
-            fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "1", function(data) {
-                var dataFilter = data.filter(function(d) {
-                    return d[7] === '1';
-                });
-                dataFilter.sort((a,b) => (a[8] > b[8]) ? 1 : ((b[8] > a[8]) ? -1 : 0));
-                makeData(dataFilter, "top", $(shadowRootEl).find('.list-items-top'));
-            });
+            var time = setInterval(function() {
+                if (dataSheet.length > 0) {
+                    var dataFilter = dataSheet.filter(function(d) {
+                        return d[7] === '1';
+                    });
+                    dataFilter.sort((a,b) => (a[8] > b[8]) ? 1 : ((b[8] > a[8]) ? -1 : 0));
+                    makeData(dataFilter, "top", $(shadowRootEl).find('.list-items-top'));
+                    clearInterval(time);
+                }
+            }, 200);
         }
     }
 );

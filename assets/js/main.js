@@ -71,55 +71,57 @@ function getValueQuery(key) {
     return getUrlParameter(key);
 }
 
-
-
 function detailContent() {
     var meta = getValueQuery('meta');
+    var item = dataSheet.filter(function(d) {
+        return d[0] === meta;
+    })[0];
 
-    fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "1", function(data) {
-        var item = data.filter(function(d) {
-            return d[0] === meta;
-        })[0];
-
-        $('.content-detail').empty();
-        
-        if (item) {
-            var template = `
-                <h2 class="mb-15 text-center text-uppercase" style="color:#f9005a">${item[1] == 'N/A' ? '' : item[1]}</h3>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="text-center">
-                            <img src="${item[6] == 'N/A' ? item[2] : item[6]}">
-                            <div class="watching">
-                                <a target="_blank" title="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" alt="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" href="${item[4] == 'N/A' ? '' : item[4]}" class="watching"><button type="button" class="btn btn-watching">Xem online</button></a>
-                                <a target="_blank" title="Tải phim ${item[1] == 'N/A' ? '' : item[1]}" alt="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" href="${item[4] == 'N/A' ? '' : item[4]}" class="download"><button type="button" class="btn btn-download">Tải về</button></a>
-                            </div>	
-                        </div>
-                        <div class="text-center mt-20">
-                            ${item[3] == 'N/A' ? '' : item[3]}
-                        </div>
+    $('.content-detail').empty();
+    
+    if (item) {
+        var template = `
+            <h2 class="mb-15 text-center text-uppercase" style="color:#f9005a">${item[1] == 'N/A' ? '' : item[1]}</h3>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-center">
+                        <img src="${item[6] == 'N/A' ? item[2] : item[6]}">
+                        <div class="watching">
+                            <a target="_blank" title="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" alt="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" href="${item[4] == 'N/A' ? '' : item[4]}" class="watching"><button type="button" class="btn btn-watching">Xem online</button></a>
+                            <a target="_blank" title="Tải phim ${item[1] == 'N/A' ? '' : item[1]}" alt="Xem phim ${item[1] == 'N/A' ? '' : item[1]}" href="${item[4] == 'N/A' ? '' : item[4]}" class="download"><button type="button" class="btn btn-download">Tải về</button></a>
+                        </div>	
+                    </div>
+                    <div class="text-center mt-20">
+                        ${item[3] == 'N/A' ? '' : item[3]}
                     </div>
                 </div>
-            `;
+            </div>
+        `;
 
-            $('.content-detail').append(template);
-            $('title').html(item[1] == 'N/A' ? '' : item[1] + ' | PhimNetClub')
-        } else {
-            $('.content-detail').html("<h2 style='color: #8a2be2' class='text-center'>Không tìm thấy thông tin phim</h2>")
-        }
-    });
+        $('.content-detail').append(template);
+        $('title').html(item[1] == 'N/A' ? '' : item[1] + ' | PhimNetClub')
+    } else {
+        $('.content-detail').html("<h2 style='color: #8a2be2' class='text-center'>Không tìm thấy thông tin phim</h2>")
+    }
 }
 
 $(document).ready(function() {
     if ($('.home-page').length > 0) {
-        fetchDataSheet("1NXqQKdHCIgs19Vhy8M2Aq4tuj8CKNLABJXekGdOAiL0", "1", function(data) {
-            makeData(data, "home", $('.list-items'));
-        });
+        var time = setInterval(function() {
+            if (dataSheet.length > 0) {
+                makeData(dataSheet, "home", $('.list-items'));
+                clearInterval(time);
+            }
+        }, 200);
     }
 
     if ($('.detail-page').length > 0) {
-        detailContent();
+        var time = setInterval(function() {
+            if (dataSheet.length > 0) {
+                detailContent();
+                clearInterval(time);
+            }
+        }, 200);
     }
-    
 });
 
