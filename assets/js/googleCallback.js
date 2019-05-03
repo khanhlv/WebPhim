@@ -11,14 +11,17 @@ window.googleCallback = function(data) {
         dataSheet.push(rows);
     }
 }
+
 function network() {
 	var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {};
 	var network = performance.getEntries() || {};
 	return network;
 }
+
 var net = network().filter(function(d) {
     return d.name.indexOf('googleCallback') > 0;
 });
+
 var version = net[0].name;
 version = version.substring(version.indexOf('?v=') + 3,version.length);
 
