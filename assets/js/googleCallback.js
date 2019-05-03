@@ -42,3 +42,8 @@ scriptWeb.src = 'assets/js/webcomponent.js?v=' + version;
 scriptWeb.defer = true;
 scriptWeb.async = true;
 head.appendChild(scriptWeb);
+
+var linkCanonical = document.createElement('link');
+linkCanonical.setAttribute('rel', 'canonical');
+linkCanonical.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
+head.appendChild(linkCanonical);
