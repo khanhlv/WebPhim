@@ -45,5 +45,5 @@ head.appendChild(scriptWeb);
 
 var linkCanonical = document.createElement('link');
 linkCanonical.setAttribute('rel', 'canonical');
-linkCanonical.setAttribute('href', location.protocol + '//' + location.host + location.pathname);
+linkCanonical.setAttribute('href', location.protocol + '//' + location.host + location.pathname + location.search);
 head.appendChild(linkCanonical);
